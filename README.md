@@ -1,5 +1,7 @@
 # FusionAuth
 
+[![Build Status](https://travis-ci.org/ninjaneers-team/fusionauth.svg?branch=master)](https://travis-ci.org/ninjaneers-team/fusionauth)
+
 [FusionAuth](https://fusionauth.io/) is a modern platform for Customer Identity and Access Management (CIAM). FusionAuth provides APIs and a responsive web user interface to support login, registration, localized email, multi-factor authentication, reporting and much more.
 
 ## Installing the Chart
