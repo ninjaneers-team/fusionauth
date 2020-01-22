@@ -1,7 +1,5 @@
 #!/bin/bash -ex
 
-CONTENT=$(base64 $NAME-$VERSION.tgz | tr -d \\n)
-
 echo "Upload chart $NAME"
 
 curl -X PUT -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" \
@@ -13,4 +11,4 @@ curl -X PUT -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: applicatio
           \"email\": \"charts@ninjaneers.de\"
         },
         \"content\":\"$(base64 $NAME-$VERSION.tgz | tr -d \\n)\"
-      }")
+      }") > /dev/null
