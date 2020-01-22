@@ -10,11 +10,18 @@ services:
 stages:
   - test
   - versioning
-  - release
   - chart
 
 jobs:
   include:
+    - stage: test
+      language: node_js
+      node_js: "10"
+      before_install:
+        - curl -L https://git.io/get_helm.sh | bash
+        - helm init --client-only
+      script:
+        - helm lint .
     - stage: versioning
       language: node_js
       node_js: "10"
@@ -38,8 +45,6 @@ jobs:
         - VERSION=$(git describe --tags --abbrev=0 | cut -c 2-)
       script:
         - helm lint .
+        - helm dep update
         - helm package . --version=$VERSION
         - ./.ci/update_chart.sh
-cache:
-  directories:
-    - $HOME/gopath/pkg/mod
