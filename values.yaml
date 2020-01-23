@@ -6,15 +6,15 @@ replicaCount: 1
 
 elasticsearch:
   enabled: true
-  image:
-    tag: 6.8.6
+  imageTag: 6.8.6
   master:
     name: master
 
 postgresql: 
   # if enabled = false u need to set data.database.host
   enabled: true
-  imageTag: 9.6.15
+  image:
+    tag: 9.6.15
   postgresqlUsername: localhost
   postgresqlPassword: localhost
 
@@ -47,7 +47,7 @@ search:
   port: 9200
   # user: ""
   # password: ""
-  
+
 environment: 
 # Database env DATABASE_USER, DATABASE_PASSWORD, DATABASE_ROOT_USER, DATABASE_ROOT_PASSWORD, DATABASE_URL will be 
 # defined in data.database
