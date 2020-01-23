@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.1...v1.2.2) (2020-01-23)
+
+
+### Bug Fixes
+
+* **requirements:** fix elasticsearch, postgres image tag ([b2f24d4](https://github.com/ninjaneers-team/fusionauth/commit/b2f24d4993b1ba5d64b82dd7524443ed980fc98f))
+
 ## [1.2.1](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.0...v1.2.1) (2020-01-23)
 
 
