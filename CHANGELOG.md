@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ninjaneers-team/fusionauth/compare/v1.1.0...v1.2.0) (2020-01-23)
+
+
+### Features
+
+* **Elasticsearch:** add credentials and custom url ([224524f](https://github.com/ninjaneers-team/fusionauth/commit/224524f1089907ea12d2365253217b65299f01e2))
+
 # [1.1.0](https://github.com/ninjaneers-team/fusionauth/compare/v1.0.1...v1.1.0) (2020-01-23)
 
 
