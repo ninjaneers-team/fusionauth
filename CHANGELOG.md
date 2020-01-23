@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.0...v1.2.1) (2020-01-23)
+
+
+### Bug Fixes
+
+* **README:** add new values to README ([be299f2](https://github.com/ninjaneers-team/fusionauth/commit/be299f2847e9f66079dba42db4b0c28c64a48529))
+
 # [1.2.0](https://github.com/ninjaneers-team/fusionauth/compare/v1.1.0...v1.2.0) (2020-01-23)
 
 
