@@ -72,7 +72,7 @@ spec:
             - name: DATABASE_URL
               value: "jdbc:postgresql://{{ include "fusionauth.databaseHost" . }}:{{ .Values.database.port }}/{{ .Values.database.name }}"
             - name: FUSIONAUTH_SEARCH_SERVERS
-              value: http://{{ .Release.Name }}-elasticsearch-client:9200
+              value: "{{ .Values.search.protocol }}://{{ include "fusionauth.searchLogin" . }}{{ include "fusionauth.searchHost" . }}:{{ .Values.search.port }}"
             {{- range $key, $value := .Values.environment }}
             - name: {{ $key }}
               value: {{ $value }}

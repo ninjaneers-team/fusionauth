@@ -32,6 +32,22 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
+{{- define "fusionauth.searchHost" -}}
+{{- if .Values.search.host -}}
+{{- .Values.search.host -}}
+{{- else -}}
+{{- .Release.Name -}}-elasticsearch-client
+{{- end -}}
+{{- end -}}
+
+{{- define "fusionauth.searchLogin" -}}
+{{- if .Values.search.user -}}
+{{- printf "%s:%s@" .Values.search.user .Values.search.password -}}
+{{- else -}}
+{{- printf "" -}}
+{{- end -}}
+{{- end -}}
+
 {{/*
 Create chart name and version as used by the chart label.
 */}}

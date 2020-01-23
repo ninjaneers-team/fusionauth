@@ -4,6 +4,20 @@
 
 replicaCount: 1
 
+elasticsearch:
+  enabled: true
+  image:
+    tag: 6.8.6
+  master:
+    name: master
+
+postgresql: 
+  # if enabled = false u need to set data.database.host
+  enabled: true
+  imageTag: 9.6.15
+  postgresqlUsername: localhost
+  postgresqlPassword: localhost
+
 image:
   repository: fusionauth/fusionauth-app
   tag: 1.14.0
@@ -15,6 +29,14 @@ fullnameOverride: ""
 service:
   type: ClusterIP
   port: 9011
+
+search:
+  enabled: true
+  protocol: http
+  host: ""
+  port: 9200
+  user: ""
+  password: ""
 
 database:
   # if empty {{- .Release.Name -}}-postgresql will be used
@@ -91,13 +113,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-elasticsearch:
-  master:
-    name: master
-
-postgresql: 
-  # if enabled = false u need to set data.database.host
-  enabled: true
-  postgresqlUsername: localhost
-  postgresqlPassword: localhost
