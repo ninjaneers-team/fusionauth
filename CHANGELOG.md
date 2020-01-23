@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ninjaneers-team/fusionauth/compare/v1.0.1...v1.1.0) (2020-01-23)
+
+
+### Features
+
+* **kickstart:** add configmap for kickstart ([ab55205](https://github.com/ninjaneers-team/fusionauth/commit/ab55205cdbcab1e7541c82321164b4dcb3f9b119))
+
 ## [1.0.1](https://github.com/ninjaneers-team/fusionauth/compare/v1.0.0...v1.0.1) (2020-01-22)
 
 
