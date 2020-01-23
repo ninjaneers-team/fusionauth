@@ -62,21 +62,33 @@ spec:
               port: http
           env:
             - name: DATABASE_USER
-              value: {{ .Values.data.database.user }}
+              value: {{ .Values.database.user }}
             - name: DATABASE_PASSWORD
-              value: {{ .Values.data.database.password }}
+              value: {{ .Values.database.password }}
             - name: DATABASE_ROOT_PASSWORD
-              value: {{ .Values.data.database.root.password }}
+              value: {{ .Values.database.root.password }}
             - name: DATABASE_ROOT_USER
-              value: {{ .Values.data.database.root.user }}
+              value: {{ .Values.database.root.user }}
             - name: DATABASE_URL
-              value: "jdbc:postgresql://{{ include "fusionauth.databaseHost" . }}:{{ .Values.data.database.port }}/{{ .Values.data.database.name }}"
-            - name: FUSIONAUTH_MEMORY
-              value: {{ .Values.data.memory }}
+              value: "jdbc:postgresql://{{ include "fusionauth.databaseHost" . }}:{{ .Values.database.port }}/{{ .Values.database.name }}"
             - name: FUSIONAUTH_SEARCH_SERVERS
               value: http://{{ .Release.Name }}-elasticsearch-client:9200
+            {{- range $key, $value := .Values.environment }}
+            - name: {{ $key }}
+              value: {{ $value }}
+            {{- end }}
+            - name: FUSIONAUTH_KICKSTART
+              value: /kickstart/kickstart.json
+            
           resources:
               {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: {{ template "fusionauth.fullname" . }}-config-volume
+              mountPath: /kickstart
+      volumes:
+        - name: {{ template "fusionauth.fullname" . }}-config-volume
+          configMap:
+            name: {{ template "fusionauth.fullname" . }}-kickstart-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
           {{- toYaml . | nindent 8 }}

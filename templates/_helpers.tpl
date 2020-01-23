@@ -25,8 +25,8 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 
 {{- define "fusionauth.databaseHost" -}}
-{{- if .Values.data.database.host -}}
-{{- .Values.data.database.host -}}
+{{- if .Values.database.host -}}
+{{- .Values.database.host -}}
 {{- else -}}
 {{- .Release.Name -}}-postgresql
 {{- end -}}

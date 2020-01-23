@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fusionauth.fullname" . }}-kickstart-config
+  labels:
+    heritage: {{ .Release.Name }}
+    release: {{ .Release.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    app: {{ template "fusionauth.name" . }}
+data:
+  {{- if .Values.kickstart }}
+  {{- range $key, $value := .Values.kickstart }}
+  {{ $key }}: |
+{{ $value | indent 4 }}
+  {{- end -}}
+{{- end -}}

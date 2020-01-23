@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: fusionauth/fusionauth-app
-  tag: latest
+  tag: 1.14.0
   pullPolicy: IfNotPresent
 
 nameOverride: ""
@@ -16,18 +16,50 @@ service:
   type: ClusterIP
   port: 9011
 
-data:
-  memory: 256M
-  database:
-    # if empty {{- .Release.Name -}}-postgresql will be used
-    host: ""
-    port: 5432
-    name: fusionauth
+database:
+  # if empty {{- .Release.Name -}}-postgresql will be used
+  host: ""
+  port: 5432
+  name: fusionauth
+  user: localhost
+  password: localhost
+  root:
     user: localhost
     password: localhost
-    root:
-      user: localhost
-      password: localhost
+environment: 
+# Database env DATABASE_USER, DATABASE_PASSWORD, DATABASE_ROOT_USER, DATABASE_ROOT_PASSWORD, DATABASE_URL will be 
+# defined in data.database
+  FUSIONAUTH_MEMORY: 256M
+  FUSIONAUTH_API_KEY: test
+kickstart:
+  # It's important to name your kickstart config kickstart.json
+  kickstart.json: |
+      {
+        "variables":{
+          "apiKey": "#{ENV.FUSIONAUTH_API_KEY}"
+        },
+        "apiKeys": [{
+          "key": "${apiKey}"
+        }],
+        "requests": [ {
+          "method": "POST",
+          "url": "/api/email/template/0502df1e-4010-4b43-b571-d423fce978b2",
+          "body": {
+            "emailTemplate": {
+              "defaultFromName": "No Reply",
+              "defaultSubject": "Setup your password",
+              "defaultHtmlTemplate": "@{setup-password.html}",
+              "defaultTextTemplate": "@{setup-password.txt}",
+              "fromEmail": "no-replay@piedpiper.com",
+              "name": "Setup Password"
+            }
+          }
+        }]
+      }
+  setup-password.html: |
+      <div>Test</div>
+  setup-password.txt: |
+      Hallo
 
 ingress:
   enabled: false
