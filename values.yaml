@@ -53,9 +53,10 @@ environment:
 # defined in data.database
   FUSIONAUTH_MEMORY: 256M
   # FUSIONAUTH_API_KEY: test
+  # Its important to add /kickstart/<file> as prefix to your kickstart file else it won't work!
+  # FUSIONAUTH_KICKSTART: /kickstart/kickstart.json
 kickstart:
   enabled: false
-  # It's important to name your kickstart config kickstart.json
   # kickstart.json: |
   #    {
   #      "variables":{

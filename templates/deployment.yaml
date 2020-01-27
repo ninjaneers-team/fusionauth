@@ -77,9 +77,6 @@ spec:
             - name: {{ $key }}
               value: {{ $value }}
             {{- end }}
-            - name: FUSIONAUTH_KICKSTART
-              value: /kickstart/kickstart.json
-            
           resources:
               {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.kickstart.enabled }}
