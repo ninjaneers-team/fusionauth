@@ -82,13 +82,17 @@ spec:
             
           resources:
               {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.kickstart.enabled }}
           volumeMounts:
             - name: {{ template "fusionauth.fullname" . }}-config-volume
               mountPath: /kickstart
+          {{- end }}
+      {{- if .Values.kickstart.enabled }}
       volumes:
         - name: {{ template "fusionauth.fullname" . }}-config-volume
           configMap:
             name: {{ template "fusionauth.fullname" . }}-kickstart-config
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
           {{- toYaml . | nindent 8 }}

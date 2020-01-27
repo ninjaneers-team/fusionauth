@@ -45,6 +45,7 @@ Parameter | Description | Default
 `search.password` | Password to connect to elasticsearch. | `nil`
 `environment` | Environment variables. | `{}`
 `kickstart` | kickstart files e.g kickstart.json. | `{}`
+`kickstart.enabled` | Execute kickstart import | `false`
 
 All other user-configurable settings, default values and some commentary about them can be found in [values.yaml](values.yaml).
 
