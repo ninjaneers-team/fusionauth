@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.2...v1.2.3) (2020-01-23)
+
+
+### Bug Fixes
+
+* **wait:** fix host names in wait-for sections ([8c4fb7e](https://github.com/ninjaneers-team/fusionauth/commit/8c4fb7e61b9cc4bd5487001973e2c23736207c91))
+
 ## [1.2.2](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.1...v1.2.2) (2020-01-23)
 
 
