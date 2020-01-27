@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.4...v1.2.5) (2020-01-27)
+
+
+### Bug Fixes
+
+* **environment:** remove kickstart env and add it to environment section ([1bf74b8](https://github.com/ninjaneers-team/fusionauth/commit/1bf74b897489722a7a8a8668c5f8c7046a1eeb25))
+
 ## [1.2.4](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.3...v1.2.4) (2020-01-27)
 
 
