@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.3...v1.2.4) (2020-01-27)
+
+
+### Bug Fixes
+
+* **chart:** add kickstart.enabled ([fe65e96](https://github.com/ninjaneers-team/fusionauth/commit/fe65e966626a7a5c5879921a396f5c8532234f65))
+
 ## [1.2.3](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.2...v1.2.3) (2020-01-23)
 
 
