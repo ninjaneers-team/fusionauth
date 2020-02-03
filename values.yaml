@@ -53,32 +53,42 @@ environment:
 # defined in data.database
   FUSIONAUTH_MEMORY: 256M
   # FUSIONAUTH_API_KEY: test
-  # Its important to add /kickstart/<file> as prefix to your kickstart file else it won't work!
+  # Its important to add /kickstart/<file> as prefix to your kickstart file else it won't work! All other files 
+  # will be mounted below /kickstart/
   # FUSIONAUTH_KICKSTART: /kickstart/kickstart.json
 kickstart:
   enabled: false
   # kickstart.json: |
   #    {
-  #      "variables":{
-  #        "apiKey": "#{ENV.FUSIONAUTH_API_KEY}"
+  #      "variables": {
+  #        "defaultTenantId": "d7d09513-a3f5-401c-9685-34ab6c552453",
+  #        "adminEmail": "admin@fusionauth.io",
+  #        "adminPassword": "password",
   #      },
-  #      "apiKeys": [{
-  #        "key": "${apiKey}"
-  #      }],
-  #      "requests": [ {
-  #        "method": "POST",
-  #        "url": "/api/email/template/0502df1e-4010-4b43-b571-d423fce978b2",
-  #        "body": {
-  #          "emailTemplate": {
-  #            "defaultFromName": "No Reply",
-  #            "defaultSubject": "Setup your password",
-  #            "defaultHtmlTemplate": "@{setup-password.html}",
-  #            "defaultTextTemplate": "@{setup-password.txt}",
-  #            "fromEmail": "no-replay@piedpiper.com",
-  #            "name": "Setup Password"
+  #      "apiKeys": [
+  #        {
+  #          "key": "bf69486b-4733-4470-a592-f1bfce7af580",
+  #          "description": "Core API Key"
+  #        }
+  #      ],
+  #      "requests": [
+  #        {
+  #          "method": "POST",
+  #          "url": "/api/user/registration",
+  #          "body": {
+  #            "user": {
+  #              "email": "#{adminEmail}",
+  #              "password": "#{adminPassword}"
+  #            },
+  #            "registration": {
+  #              "applicationId": "#{FUSIONAUTH_APPLICATION_ID}",
+  #              "roles": [
+  #                "admin"
+  #              ]
+  #            }
   #          }
   #        }
-  #      }]
+  #      ]
   #    }
   # setup-password.html: |
   #    <div>Test</div>

@@ -8,7 +8,7 @@ curl -X PUT -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: applicatio
         \"message\":\"Chart update\",
         \"committer\": {
           \"name\": \"Chart Release Bot\",
-          \"email\": \"charts@ninjaneers.de\"
+          \"email\": \"$EMAIL\"
         },
         \"content\":\"$(base64 $NAME-$VERSION.tgz | tr -d \\n)\"
       }") > /dev/null

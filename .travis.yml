@@ -38,6 +38,7 @@ jobs:
         - TEAM=ninjaneers-team
         - REPOSITORY=charts
         - VERSION=1.0.0
+        - EMAIL=charts@ninjaneers.de
       before_install:
         - curl -L https://git.io/get_helm.sh | bash
         - git pull
@@ -48,3 +49,5 @@ jobs:
         - helm dep update
         - helm package . --version=$VERSION
         - ./.ci/update_chart.sh
+        # push it to fusionauth chart repository
+        - TEAM=FusionAuth ./.ci/update_chart.sh
