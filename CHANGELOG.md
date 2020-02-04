@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.5...v1.3.0) (2020-02-03)
+
+
+### Features
+
+* **fusionauth:** push it to fusion auth chart repository ([44a2442](https://github.com/ninjaneers-team/fusionauth/commit/44a24428f12eadd2add17030c39dab0c0e755b70))
+
 ## [1.2.5](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.4...v1.2.5) (2020-01-27)
 
 
