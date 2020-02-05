@@ -9,8 +9,8 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     app: {{ template "fusionauth.name" . }}
 data:
-  {{- if .Values.kickstart }}
-  {{- range $key, $value := .Values.kickstart }}
+  {{- if .Values.kickstart.data }}
+  {{- range $key, $value := .Values.kickstart.data }}
   {{ $key }}: |
 {{ $value | indent 4 }}
   {{- end -}}
