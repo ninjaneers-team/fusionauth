@@ -1,3 +1,11 @@
+## [1.3.1](https://github.com/ninjaneers-team/fusionauth/compare/v1.3.0...v1.3.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* **Ingress:** change api version ([d0f18a6](https://github.com/ninjaneers-team/fusionauth/commit/d0f18a6bb797cebd7aac46aa9a1a10f4b1d6090c))
+* **Ingress:** change apiVersion ([ce652c8](https://github.com/ninjaneers-team/fusionauth/commit/ce652c8819067d9cc798fd914ed3b6319e3bde92))
+
 # [1.3.0](https://github.com/ninjaneers-team/fusionauth/compare/v1.2.5...v1.3.0) (2020-02-03)
 
 
