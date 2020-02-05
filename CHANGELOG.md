@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/ninjaneers-team/fusionauth/compare/v1.3.1...v1.3.2) (2020-02-05)
+
+
+### Bug Fixes
+
+* **kickstart:** add data for configmap issues ([f05090c](https://github.com/ninjaneers-team/fusionauth/commit/f05090cdb81df2ee0b6c607a839ecde45a1f304e))
+
 ## [1.3.1](https://github.com/ninjaneers-team/fusionauth/compare/v1.3.0...v1.3.1) (2020-02-04)
 
 
